@@ -7,8 +7,60 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+  box-sizing: border-box;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar */
+nav {
+  overflow: hidden;
+  background-image: url("./images/nav-bg.png");
+  background-size: 100%;
+}
+
+nav img {
+  height: 50%;
+  width: 50%;
+}
+
+nav .brand-logo,
+nav ul {
+  margin: 0 1rem;
+}
+
+nav li a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+/* Homepage style */
+.home-hero {
+  margin-top: 64px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-image: url("./images/signed-out-home.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 8px black;
 }
