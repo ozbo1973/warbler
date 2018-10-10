@@ -17,6 +17,14 @@ class AuthForm extends Component {
     });
   };
 
+  handleOnSubmit = e => {
+    e.preventDefault();
+    const authType = this.props.signup ? "signup" : "signin";
+    this.props.onAuth(authType, this.state).then(() => {
+      console.log("logged in");
+    });
+  };
+
   render() {
     const { email, username, password, profileImageURL } = this.state;
     const { buttonText, heading, signup } = this.props;
@@ -59,6 +67,7 @@ class AuthForm extends Component {
                       type="text"
                       id="username"
                       name="username"
+                      value={username}
                       onChange={this.handleOnChange}
                     />
                     <label htmlFor="username">Username:</label>
@@ -72,13 +81,17 @@ class AuthForm extends Component {
                       type="text"
                       id="profileImageURL"
                       name="profileImageURL"
+                      value={profileImageURL}
                       onChange={this.handleOnChange}
                     />
-                    <label htmlFor="profileImageURL">Password:</label>
+                    <label htmlFor="profileImageURL">Profile Image:</label>
                   </div>
                 </div>
               </div>
             )}
+            <button className="btn waves-effect waves-light" type="submit">
+              {buttonText}
+            </button>
           </form>
         </div>
       </div>
