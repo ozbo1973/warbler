@@ -20,20 +20,47 @@ class AuthForm extends Component {
   handleOnSubmit = e => {
     e.preventDefault();
     const authType = this.props.signup ? "signup" : "signin";
-    this.props.onAuth(authType, this.state).then(() => {
-      console.log("logged in");
-    });
+    this.props
+      .onAuth(authType, this.state)
+      .then(() => {
+        this.props.history.push("/");
+      })
+      .catch(() => {
+        return;
+      });
   };
 
   render() {
     const { email, username, password, profileImageURL } = this.state;
-    const { buttonText, heading, signup } = this.props;
+    const {
+      buttonText,
+      heading,
+      signup,
+      error,
+      removeError,
+      history
+    } = this.props;
+
+    history.listen(() => removeError());
+
     return (
       <div className="container">
         <div className="form">
           <form onSubmit={this.handleOnSubmit}>
             <div className="row">
               <h1>{heading}</h1>
+              {error.message && (
+                <div
+                  style={{
+                    color: "white",
+                    padding: "1rem",
+                    textAlign: "center"
+                  }}
+                  className="new badge red"
+                >
+                  {error.message}
+                </div>
+              )}
               <div className="input-field col s12">
                 <input
                   className="validate"
@@ -42,6 +69,7 @@ class AuthForm extends Component {
                   name="email"
                   value={email}
                   onChange={this.handleOnChange}
+                  required
                 />
                 <label htmlFor="email">Email:</label>
               </div>
@@ -54,6 +82,7 @@ class AuthForm extends Component {
                   id="password"
                   name="password"
                   onChange={this.handleOnChange}
+                  required
                 />
                 <label htmlFor="password">Password:</label>
               </div>
