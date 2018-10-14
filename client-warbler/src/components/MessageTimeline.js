@@ -1,10 +1,14 @@
 import React from "react";
-import MessagList from "../containers/MessagList";
+import MessagesList from "../containers/MessagesList";
+import UserAside from "./UserAside";
 
-const MessageTimeline = props => {
+const MessageTimeline = ({ profileImageURL, username }) => {
   return (
-    <div className="row">
-      <MessageList />
+    <div className="MessageTimeline">
+      <div className="row">
+        <UserAside profileImgURL={profileImageURL} username={username} />
+        <MessagesList />
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #c9f0f2;
 }
 * {
   box-sizing: border-box;
@@ -28,7 +29,12 @@ nav img {
   width: 50%;
 }
 
-nav .brand-logo,
+.brand-logo {
+  height: 100%;
+  width: 80px;
+  margin: 0 50%;
+}
+
 nav ul {
   margin: 0 1rem;
 }
@@ -63,4 +69,22 @@ nav li a:hover {
   color: white;
   font-weight: bold;
   text-shadow: 0 0 8px black;
+}
+
+/* MessageTimeline styles */
+.MessageTimeline {
+  /* display: flex; */
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.UserAside {
+  padding-top: 0.5rem;
+}
+
+/* Message Item */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
 }

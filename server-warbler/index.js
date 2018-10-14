@@ -40,9 +40,9 @@ app.get("/api/messages", loginRequired, async function(req, res, next) {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("backend WARBLER APPLICATION");
-});
+// app.get("/", (req, res) => {
+//   res.send("backend WARBLER APPLICATION");
+// });
 
 //error handling
 app.use((req, res, next) => {

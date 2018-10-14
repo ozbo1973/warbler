@@ -2,7 +2,7 @@
 import { combineReducers } from "redux";
 import errors from "./errors";
 import currentUser from "./currentUser";
-import { messages } from "./messages";
+import messages from "./messages";
 
 const rootReducer = combineReducers({
   errors,
