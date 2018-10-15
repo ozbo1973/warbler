@@ -11,10 +11,21 @@ body {
 * {
   box-sizing: border-box;
 }
-
+form {
+  background-color: #fff;
+  margin: 0.5rem 0;
+  max-width: 85%;
+}
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Errors */
+.errors {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Navbar */
@@ -69,6 +80,17 @@ nav li a:hover {
   color: white;
   font-weight: bold;
   text-shadow: 0 0 8px black;
+}
+
+/* Authforms */
+.form-header {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+.form-btn {
+  display: flex;
+  justify-content: center;
 }
 
 /* MessageTimeline styles */

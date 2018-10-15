@@ -47,20 +47,13 @@ class AuthForm extends Component {
       <div className="container">
         <div className="form">
           <form onSubmit={this.handleOnSubmit}>
+            <div className="form-header">
+              <h1 className="form-title">{heading}</h1>
+            </div>
+            {error.message && (
+              <div className="errors new badge red">{error.message}</div>
+            )}
             <div className="row">
-              <h1>{heading}</h1>
-              {error.message && (
-                <div
-                  style={{
-                    color: "white",
-                    padding: "1rem",
-                    textAlign: "center"
-                  }}
-                  className="new badge red"
-                >
-                  {error.message}
-                </div>
-              )}
               <div className="input-field col s12">
                 <input
                   className="validate"
@@ -118,9 +111,11 @@ class AuthForm extends Component {
                 </div>
               </div>
             )}
-            <button className="btn waves-effect waves-light" type="submit">
-              {buttonText}
-            </button>
+            <div className="form-btn">
+              <button className="btn waves-effect waves-light" type="submit">
+                {buttonText}
+              </button>
+            </div>
           </form>
         </div>
       </div>

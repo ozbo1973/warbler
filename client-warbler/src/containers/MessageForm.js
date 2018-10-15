@@ -25,38 +25,31 @@ class MessageForm extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <form onSubmit={this.handleOnSubmit}>
-            {this.props.errors.message && (
-              <div
-                style={{
-                  color: "white",
-                  padding: "1rem",
-                  textAlign: "center"
-                }}
-                className="new badge red"
-              >
-                {this.props.errors.message}
-              </div>
-            )}
-            <div className="row">
-              <div className="input-field col s12">
-                <input
-                  type="text"
-                  className="validate"
-                  name="messageInput"
-                  id="messageInput"
-                  onChange={this.handleOnChange}
-                  value={this.state.messageInput}
-                />
-                <label htmlFor="messageInput">Type a Message</label>
-              </div>
+        <form onSubmit={this.handleOnSubmit}>
+          {this.props.errors.message && (
+            <div className="errors new badge red">
+              {this.props.errors.message}
             </div>
+          )}
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                type="text"
+                className="validate"
+                name="messageInput"
+                id="messageInput"
+                onChange={this.handleOnChange}
+                value={this.state.messageInput}
+              />
+              <label htmlFor="messageInput">Type a Message</label>
+            </div>
+          </div>
+          <div className="form-btn">
             <button className="btn waves-effect waves-light" type="submit">
               Add The Message
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }
